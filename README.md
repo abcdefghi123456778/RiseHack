@@ -1,5 +1,5 @@
 # RiseHack
-🚀 RiseHack – The Global Coding Revolution, Together
+🚀 RiseHack – The Global Coding Revolution, Together.
 RiseHack is the social network designed to bring developers from all over the world into one united community. It's more than just a platform — it's a space where people who love code can share, learn, and grow together.
 
 🌐 Key Features
