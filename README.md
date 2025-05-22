@@ -1,25 +1,12 @@
-# RiseHack
-🚀 RiseHack – The Global Coding Revolution, Together
-RiseHack is the social network designed to bring developers from all over the world into one united community. It's more than just a platform — it's a space where people who love code can share, learn, and grow together.
+# React + Vite
 
-🌐 Key Features
-🧑‍💻 Connect with fellow developers
-Meet like-minded developers, build friendships, and expand your global network.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-📅 Discover tech events every day
-An always-updated board featuring coding events, hackathons, collaborative projects, and creative challenges. Get notified, take part, and stay active in the global scene.
+Currently, two official plugins are available:
 
-💬 Chat and collaborate
-Talk with other developers, create private groups, exchange practical advice, solve problems, and grow together.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-💡 Share ideas and projects
-Post code snippets, tools, hacks, logic challenges, and project ideas. Inspire and be inspired.
+## Expanding the ESLint configuration
 
-🤝 Form teams for events
-Team up with other participants, join or create squads, work on shared projects, and level up your skills together.
-
-🔥 Why RiseHack?
-Because growth comes from sharing. In a world where code is everywhere, RiseHack keeps you updated, connected, and motivated. It's the home of those who code not just to work, but to learn, create, and challenge themselves every day.
-
-📣 Join RiseHack Now
-Whether you're a beginner or a seasoned coder, RiseHack is your space. Inspiration has never been this close.
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

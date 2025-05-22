@@ -1,0 +1,259 @@
+/* LoginPage.css */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(180deg, #2c2c38 0%, #181820 100%); /* Sfondo base più scuro */
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden; /* Previene scrollbars dai cerchi grandi */
+}
+
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative; /* Necessario per lo pseudo-elemento ::before */
+  overflow: hidden; /* Previene che i cerchi sfocati escano e creino scrollbar */
+}
+
+/* Stile per i cerchi di sfondo */
+.login-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Dietro il login-container ma sopra lo sfondo del body */
+  background:
+    /* Cerchio Viola */
+    radial-gradient(circle at 15% 25%, rgba(138, 73, 207, 0.3) 0%, transparent 50vmax), /* Viola - usa vmax per grandezza relativa alla viewport */
+    /* Cerchio Rosa */
+    radial-gradient(circle at 75% 30%, rgba(255, 105, 180, 0.25) 0%, transparent 45vmax), /* Rosa */
+    /* Cerchio Bianco/Grigio Chiaro */
+    radial-gradient(circle at 30% 80%, rgba(255, 255, 255, 0.15) 0%, transparent 40vmax); /* Bianco */
+  
+  /*
+    Non serve background-size se i 'transparent Xvmax' definiscono la grandezza.
+    Se i cerchi dovessero essere più piccoli e non coprire l'intera area in modo diffuso,
+    allora background-size e background-repeat: no-repeat; sarebbero utili.
+  */
+  filter: blur(100px); /* Aumentato il blur per un effetto "ombra enorme" più diffuso */
+  opacity: 0.9; /* Opacità generale dei cerchi luminosi */
+  /* Trasformazioni per un posizionamento più dinamico dei cerchi (opzionale) */
+  /* transform: scale(1.5); */
+}
+
+
+.login-container {
+  background-color: rgba(30, 30, 30, 0.85); /* Sfondo del box principale con leggera trasparenza per vedere i cerchi */
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  display: flex;
+  gap: 40px; /* Spazio tra le due sezioni */
+  width: 100%;
+  max-width: 900px; /* Larghezza massima del contenitore */
+  box-sizing: border-box;
+  position: relative; /* Per assicurare che sia sopra lo pseudo-elemento ::before */
+  z-index: 1; /* Per assicurare che sia sopra lo pseudo-elemento ::before */
+  backdrop-filter: blur(5px); /* Effetto vetro smerigliato (opzionale, supportato dai browser moderni) */
+  -webkit-backdrop-filter: blur(5px); /* Per Safari */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Bordo sottile per definire meglio il container */
+}
+
+.login-form-section {
+  flex: 1.5; /* La sezione del form occupa più spazio */
+  display: flex;
+  flex-direction: column;
+}
+
+.login-info-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Centra il contenuto verticalmente */
+  gap: 30px; /* Spazio tra logo e bottone */
+}
+
+.login-title {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.login-input-group {
+  margin-bottom: 20px;
+}
+
+.login-input-group label {
+  display: block;
+  font-size: 14px;
+  color: #b0b0b0; /* Grigio chiaro per le label */
+  margin-bottom: 8px;
+}
+
+.login-input-group input {
+  width: 100%;
+  padding: 12px 15px;
+  background-color: #dcdcdc; /* Grigio chiaro per l'input */
+  border: 1px solid #444444;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333333; /* Testo scuro nell'input */
+  box-sizing: border-box;
+}
+
+.login-input-group input::placeholder {
+  color: #777777;
+}
+
+.login-input-group input:focus {
+  outline: none;
+  border-color: #8A49CF; /* Viola al focus */
+  box-shadow: 0 0 0 2px rgba(138, 73, 207, 0.3);
+}
+
+
+.login-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin-bottom: 30px;
+  flex-wrap: wrap; /* Per andare a capo su schermi piccoli */
+  gap: 10px;
+}
+
+.login-links a {
+  color: #b0b0b0;
+  text-decoration: none;
+}
+
+.login-links a:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+.login-links span {
+  color: #b0b0b0;
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+}
+
+.login-button:active {
+    transform: scale(0.98);
+}
+
+.google-button {
+  background-color: #7B30C2; /* Viola per Google button */
+  color: white;
+  margin-bottom: 20px; /* Spazio sotto il bottone Google */
+}
+
+.google-button:hover {
+  background-color: #6A29A8;
+}
+
+.login-logo-container {
+  margin-bottom: 20px; /* Spazio sotto il logo, se necessario */
+  display: flex;
+  justify-content: center;
+}
+
+.main-submit-button {
+  background-color: #8A49CF; /* Viola per il bottone principale */
+  color: white;
+}
+
+.main-submit-button:hover {
+  background-color: #753db8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+    padding: 30px;
+    max-width: 500px; /* Larghezza massima su mobile */
+    margin: 20px; /* Aggiunge margine per non toccare i bordi su mobile */
+  }
+
+  .login-page::before {
+    /* Adatta i cerchi per mobile se necessario, potrebbero essere troppo grandi o mal posizionati */
+    background:
+      radial-gradient(circle at 10% 15%, rgba(138, 73, 207, 0.3) 0%, transparent 60vmax),
+      radial-gradient(circle at 85% 40%, rgba(255, 105, 180, 0.25) 0%, transparent 55vmax),
+      radial-gradient(circle at 50% 85%, rgba(255, 255, 255, 0.15) 0%, transparent 50vmax);
+    filter: blur(80px); /* Potrebbe essere necessario ridurre il blur su mobile per performance/estetica */
+  }
+
+  .login-form-section {
+    order: 1; /* Il form viene prima */
+  }
+
+  .login-info-section {
+    order: 2; /* La sezione info/logo viene dopo */
+    margin-top: 30px; /* Spazio quando va sotto */
+  }
+
+  .login-title {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .login-input-group input {
+    padding: 14px 15px;
+  }
+
+  .login-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-page {
+    padding: 10px;
+  }
+  .login-container {
+    padding: 20px;
+    margin: 10px;
+  }
+  .login-title {
+    font-size: 24px;
+  }
+  .login-button {
+    padding: 14px;
+    font-size: 15px;
+  }
+  .login-links {
+     font-size: 12px;
+  }
+  .login-page::before {
+    filter: blur(60px); /* Riduci ulteriormente il blur su schermi molto piccoli se necessario */
+  }
+}
